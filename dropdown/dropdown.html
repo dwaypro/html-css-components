@@ -1,0 +1,10 @@
+<div class="dropdown hidden" id="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Source
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <!-- static example -->
+        <li> Option 1</li>
+        <!-- dynamic example -->
+        <li ng-repeat="option in options" class="lifield"><a ng-click="someAction($event)"> {{option.value}}</a> </li>
+    </ul>
+</div>
