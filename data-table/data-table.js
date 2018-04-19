@@ -1,3 +1,7 @@
+//javascript for datatable assumes angularjs and jquery
+
+
+// Overrides the second table header row and replaces with an input box that allows for dynamic filtering
 angular.element('#tableid thead tr#filterrow th').each(function() {
     $(this).html('<input type="text"  size="11" />');
 });
@@ -9,7 +13,7 @@ $("#tableid thead input").on('keyup change', function() {
         .draw();
 });
 
-
+//configures a datatables with initialization settings. May pass in an object
 $scope.table = angular.element('#tableid').DataTable({
     "order": [
         [0, "desc"]
@@ -43,3 +47,19 @@ $scope.table = angular.element('#tableid').DataTable({
         "lengthMenu": "Display: _MENU_ ",
     }
 })
+
+//One way of adding rows to the datatable from rxservices response...
+$scope.getData = function($scope) {
+    var table = angular.element('tableid').DataTable({
+        retrieve: true,
+    });
+    table.clear();
+
+    exampleModuleWebApi.get(options)
+        .then(function(response){
+            response.data.forEach(function(object){
+                table.row.add([object.property, object.property2, object.property3])
+            })
+        })
+}
+
