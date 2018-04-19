@@ -1,0 +1,30 @@
+#cardlocktabs{
+    background-color: rgb(222, 227, 225);
+    text-align: center;
+    padding: 5px;
+    /*margin-top: 10px;*/
+}
+
+.tab{
+    /*display: block;*/
+}
+.sub{
+    width: 15%;
+    text-align: center;
+    margin-right: 5px;
+    color: rgb(159,170,193);
+}
+
+#cardlocktabs a {
+    color: rgb(159,170,193) !important;
+}
+
+#cardlocktabs a:focus{
+    color: white !important;
+}
+.sub a:active{
+    background-color: rgb(40, 194, 134) !important;
+}
+.sub a:focus{
+    background-color: rgb(40, 194, 134) !important;
+}
